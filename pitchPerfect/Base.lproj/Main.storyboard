@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fia-Ev-N0E">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -27,7 +27,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWl-UI-TaG">
                                 <rect key="frame" x="247" y="375" width="107" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkA-z0-yKS">
@@ -35,6 +35,7 @@
                                 <state key="normal" image="stopButton"/>
                                 <connections>
                                     <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q6U-Ut-iQD"/>
+                                    <segue destination="w9V-I7-H1Y" kind="show" id="gaL-Um-3ja"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -48,6 +49,7 @@
                             <constraint firstItem="7yN-b3-MZy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yiG-9A-8p2"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="C7E-jj-bNz"/>
                     <connections>
                         <outlet property="recordButton" destination="7yN-b3-MZy" id="3vC-ic-mOy"/>
                         <outlet property="recordingLabel" destination="CWl-UI-TaG" id="J4m-cz-p9c"/>
@@ -56,6 +58,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1171" y="365"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="pZr-RU-BPp">
+            <objects>
+                <viewController id="w9V-I7-H1Y" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M9b-OY-zfY"/>
+                        <viewControllerLayoutGuide type="bottom" id="cyN-cZ-n9N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CnX-XC-pGn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.17651878369999999" green="1" blue="0.14038351029999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jNG-H9-GmQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2159" y="119"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kti-8Q-IGZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fia-Ev-N0E" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3gA-dR-jWa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dew-UA-q8H"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z9d-rm-Gqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="359" y="365"/>
         </scene>
     </scenes>
     <resources>

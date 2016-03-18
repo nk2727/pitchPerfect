@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        stopRecordingButton.enabled = false
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
 
             }
     override func viewWillAppear(animated: Bool) {
-        print("viewWillAppear called")
+        stopRecordingButton.enabled = false
     }
 }
 
