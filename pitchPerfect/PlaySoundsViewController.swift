@@ -27,12 +27,15 @@ class PlaySoundsViewController: UIViewController {
     var audioFile: AVAudioFile!
     var audioEngine: AVAudioEngine!
     var audioPlayerNode: AVAudioPlayerNode!
-    var lastRenderTime: NSTimer!
-    var playerTime: NSTimer!
+    var lastRenderTime: AVAudioTime!
+    var playerTime: AVAudioTime!
     var stopTimer: NSTimer!
     
     @IBAction func playSoundForButton (sender: UIButton ) {
         print("Play Sound Button Pressed")
+        
+        setupAudio()
+        
         switch(ButtonType(rawValue: sender.tag)! ) {
         case .Slow:
             playSound(rate: 0.5)
