@@ -84,8 +84,21 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
             
             var delayInSeconds: Double = 0
             
+       
+            
+            //if audioPlayerNode.lastRendertime is not nil ( nil when engine is not running or
+            //playerNode is not connected to an input or output node
+            
+            // to get the sample rate of the audio file:
+            // nodeTime: AVAudioTime set.audipPlayerNode.lastRenderTime 
+            //      (The time for which the node most recently rendered)
+            // playerTime: AVAudioTime = self.audioPlayerNode.playerTimeForNodeTime(nodeTime)
+            //      returns a time relative to the player’s start time.
+            // playerTime.sampleRate: is the file sample rate
+            
             if let lastRenderTime = self.audioPlayerNode.lastRenderTime, let playerTime = self.audioPlayerNode.playerTimeForNodeTime(lastRenderTime) {
                 
+                //audioFile.length = number of sample frames in the file
                 if let rate = rate {
                     delayInSeconds = Double(self.audioFile.length - playerTime.sampleTime) / Double(self.audioFile.processingFormat.sampleRate) / Double(rate)
                 } else {
@@ -94,7 +107,15 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
             }
             
             // schedule a stop timer for when audio finishes playing
+            // run "stopAudio" after delayInSeconds
             self.stopTimer = NSTimer(timeInterval: delayInSeconds, target: self, selector: "stopAudio", userInfo: nil, repeats: false)
+           
+            //note:
+            //Using scheduledWithTimeInterval(_:target:selector:userInfo:repeats:) class method to create the
+            //timer will also add the timer automatically to the NSRunLoop associated with the NSThread in which
+            //the timer is created.
+            
+            // add the timer to the main runloop
             NSRunLoop.mainRunLoop().addTimer(self.stopTimer!, forMode: NSDefaultRunLoopMode)
         }
         
