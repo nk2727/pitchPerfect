@@ -109,7 +109,7 @@
                                                 <rect key="frame" x="280" y="0.0" width="280" height="134"/>
                                                 <state key="normal" image="darthVaderButton"/>
                                                 <connections>
-                                                    <action selector="stopButtonPressed:" destination="w9V-I7-H1Y" eventType="touchUpInside" id="wRb-wE-Ffa"/>
+                                                    <action selector="playSoundForButton:" destination="w9V-I7-H1Y" eventType="touchUpInside" id="V5G-9K-a1G"/>
                                                 </connections>
                                             </button>
                                         </subviews>
